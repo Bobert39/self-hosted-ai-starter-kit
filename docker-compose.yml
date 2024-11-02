@@ -10,18 +10,18 @@ networks:
 x-n8n: &service-n8n
   image: n8nio/n8n:latest
   networks: ['demo']
-environment:
-  - DB_TYPE=postgres
-  - DB_POSTGRESDB_HOST=postgres
-  - DB_POSTGRESDB_USER=${POSTGRES_USER}
-  - DB_POSTGRESDB_PASSWORD=${POSTGRES_PASSWORD}
-  - N8N_DIAGNOSTICS_ENABLED=false
-  - N8N_PERSONALIZATION_ENABLED=false
-  - N8N_ENCRYPTION_KEY=${N8N_ENCRYPTION_KEY}
-  - N8N_USER_MANAGEMENT_JWT_SECRET=${N8N_USER_MANAGEMENT_JWT_SECRET}
-
-links:
+  environment:
+    - DB_TYPE=postgres
+    - DB_POSTGRESDB_HOST=postgres
+    - DB_POSTGRESDB_USER=${POSTGRES_USER}
+    - DB_POSTGRESDB_PASSWORD=${POSTGRES_PASSWORD}
+    - N8N_DIAGNOSTICS_ENABLED=false
+    - N8N_PERSONALIZATION_ENABLED=false
+    - N8N_ENCRYPTION_KEY=${N8N_ENCRYPTION_KEY}
+    - N8N_USER_MANAGEMENT_JWT_SECRET=${N8N_USER_MANAGEMENT_JWT_SECRET}
+  links:
     - postgres
+
 
 x-ollama: &service-ollama
   image: ollama/ollama:latest
