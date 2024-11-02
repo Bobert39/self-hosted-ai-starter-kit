@@ -41,11 +41,7 @@ x-init-ollama: &init-ollama
   entrypoint: /bin/sh
   command:
     - "-c"
-<<<<<<< HEAD
     - "sleep 3; OLLAMA_HOST=ollama:11434 ollama pull llama3.2; OLLAMA_HOST=ollama pull nomic-embed-text"
-=======
-    - "sleep 3; OLLAMA_HOST=ollama:11434 ollama pull llama3.2; OLLAMA_HOST=ollama:11434 ollama pull nomic-embed-text"
->>>>>>> 3505bc6c38380d8c7f0144f128ed639ff27900fd
 
 services:
   postgres:
@@ -53,12 +49,8 @@ services:
     networks: ['demo']
     restart: unless-stopped
     ports:
-<<<<<<< HEAD
         - 5432:5432
-=======
-      -5432:5432
 
->>>>>>> 3505bc6c38380d8c7f0144f128ed639ff27900fd
     environment:
       - POSTGRES_USER
       - POSTGRES_PASSWORD
