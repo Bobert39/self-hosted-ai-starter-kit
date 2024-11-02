@@ -20,7 +20,7 @@ environment:
   - N8N_ENCRYPTION_KEY=${N8N_ENCRYPTION_KEY}
   - N8N_USER_MANAGEMENT_JWT_SECRET=${N8N_USER_MANAGEMENT_JWT_SECRET}
 
-  links:
+links:
     - postgres
 
 x-ollama: &service-ollama
