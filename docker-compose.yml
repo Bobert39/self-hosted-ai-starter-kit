@@ -10,7 +10,7 @@ networks:
 x-n8n: &service-n8n
   image: n8nio/n8n:latest
   networks: ['demo']
-environment:
+  environment:
   - DB_TYPE=postgres
   - DB_POSTGRES_HOST=postgres                   # Change from DB_POSTGRESDB_HOST to DB_POSTGRES_HOST
   - DB_POSTGRES_USER=${POSTGRES_USER}           # Change from DB_POSTGRESDB_USER to DB_POSTGRES_USER
